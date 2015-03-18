@@ -1,0 +1,10 @@
+#!/bin/bash
+
+if test $# -lt 1
+   then echo "./$0 SSID"
+        echo "\# Assuming device-name-SSID profile exists."
+fi
+
+ip link set wlp8s0 down
+netctl stop-all
+netctl start wlp8s0-"$1"

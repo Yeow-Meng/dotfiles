@@ -13,18 +13,9 @@ PS1='[\u@\h \W]\$ '
 HISTSIZE=
 HISTFILESIZE=
 
-# Arch Specific:
-# Correction to: Bundler installs gems system-wide
-export GEM_HOME=$(ruby -e 'print Gem.user_dir')
-
-# Add gem to path
-PATH="$(ruby -e 'print Gem.user_dir')/bin:$PATH"
-
-
 # MARKS PLUGIN
 # http://jeroenjanssens.com/2013/08/16
 # /quickly-navigate-your-filesystem-from-the-command-line.html
-# I love this!
 export MARKPATH=$HOME/.marks
 function j { 
     cd -P "$MARKPATH/$1" 2>/dev/null || echo "No such mark: $1"

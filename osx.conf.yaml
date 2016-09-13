@@ -1,0 +1,8 @@
+- link:
+    ~/.vimrc: vimrc
+    ~/.bashrc: bashrc
+    ~/.gdbinit: gdbinit
+    ~/.gitconfig: gitconfig
+    ~/.bash_profile: bash_profile
+    ~/.vim: vim/
+    ~/linux: linux/

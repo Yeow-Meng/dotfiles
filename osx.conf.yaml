@@ -5,4 +5,5 @@
     ~/.gitconfig: gitconfig
     ~/.bash_profile: bash_profile
     ~/.vim: vim/
+    ~/.emacs: emacs
     ~/linux: linux/

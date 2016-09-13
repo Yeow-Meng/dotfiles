@@ -4,8 +4,7 @@
 [[ $- != *i* ]] && return
 
 # Pretty Print ls
-alias ls='ls --color=auto'
-alias l='ls'
+#alias ls='ls --color=auto'
 
 # Safe mv
 alias sm='mv -n'

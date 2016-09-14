@@ -32,3 +32,11 @@ function unmark {
 function marks {
     ls -l "$MARKPATH" | sed 's/  / /g' | cut -d' ' -f9- | sed 's/ -/\t-/g' && echo
 }
+
+
+# OS Specific
+host_name="$(uname)"
+if [[ "$host_name" =~ .*Darwin.* ]]; then
+   export PATH="$PATH:$HOME/homebrew/bin"
+fi
+   

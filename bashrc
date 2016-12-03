@@ -3,8 +3,7 @@
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
 
-# Pretty Print ls
-#alias ls='ls --color=auto'
+
 
 # Safe mv
 alias sm='mv -n'
@@ -34,9 +33,13 @@ function marks {
 }
 
 
-# OS Specific
+# OS Specific - this is sort of a pain but that is what you get for using proprietary software ;(
 host_name="$(uname)"
 if [[ "$host_name" =~ .*Darwin.* ]]; then
-   export PATH="$PATH:$HOME/homebrew/bin"
+   export PATH="$PATH:$HOME/w/brew/bin"
+   export PATH="$PATH:$HOME/pack/war/bin"
+   alias ls='ls -G'
+else
+   alias ls='ls --color=auto'
 fi
    

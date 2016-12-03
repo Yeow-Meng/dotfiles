@@ -52,7 +52,9 @@ Return a list of installed packages or nil for every skipped package."
 ; emacs vi layer
 (ensure-package-installed 'evil)
 (require 'evil)
-(evil-mode 0);
+(evil-mode 1);
+(setq evil-default-state 'emacs)
+
 
 ; when I say kill - KILL.
 (global-set-key [(control x) (k)] 'kill-this-buffer)
@@ -64,7 +66,7 @@ Return a list of installed packages or nil for every skipped package."
 (require 'dired-x)
 (setq-default dired-omit-files-p t) ; this is buffer-local variable
 (setq dired-omit-files
-    (concat dired-omit-files "\\|^\\..+$\\|\\.pdf$\\|\\.tex$"))
+    (concat dired-omit-files "\\|^\\..+$"))
 
 (ensure-package-installed 'magit)
 (require 'magit)
@@ -98,10 +100,13 @@ Return a list of installed packages or nil for every skipped package."
 ;;
 ; VC colors
 (custom-set-faces
- '(diff-added ((t (:foreground "Green"))) 'now)
- '(diff-removed ((t (:foreground "Red"))) 'now)
- '(diff-hunk-header((t (:forground "black")) 'now)
- ))
+ ;; custom-set-faces was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(diff-added ((t (:foreground "Green"))))
+ '(diff-hunk-header ((t (:forground "black")) (quote now)))
+ '(diff-removed ((t (:foreground "Red")))))
 
 ;;
 ; kill other buffer
@@ -115,7 +120,17 @@ Return a list of installed packages or nil for every skipped package."
 
 ;;
 ; tab in c
+(setq-default indent-tabs-mode nil)
+(setq indent-line-function 'insert-tab)
 (setq c-default-style "linux" c-basic-offset 4)
+(setq-default tab-width 4)
+(custom-set-variables
+ ;; custom-set-variables was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(standard-indent 4))
+
 
 ;;
 ; Switch back to mini buffer
@@ -150,3 +165,27 @@ Return a list of installed packages or nil for every skipped package."
     (lambda () (interactive) (find-alternate-file "..")))
   ; was dired-up-directory
  ))
+
+
+;;; COULD NOT GET THIS CONFIGURED TO MY TASTES    
+;; auxtex
+(ensure-package-installed 'auctex)
+(load "auctex.el" nil t t)
+(setq-default TeX-master nil)
+(setenv "PATH" (concat (getenv "PATH") ":/Library/TeX/texbin"))
+(setq exec-path (append exec-path '("/Library/TeX/texbin")))
+(setq LaTeX-command-style '(("" "%(PDF)%(latex) -file-line-error %S%(PDFout)")))
+
+;;
+; Markdown    
+(ensure-package-installed 'markdown-mode)    
+(require 'markdown-mode)
+
+
+;;
+; Brew path for ispell
+(setq exec-path (append "~/w/brew/bin/" exec-path))       
+
+(setq ispell-program-name "~/w/brew//Cellar/aspell/0.60.6.1/bin/aspell")
+
+(setq ediff-window-setup-function 'ediff-setup-windows-plain)    

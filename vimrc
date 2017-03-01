@@ -14,6 +14,9 @@ set ttyfast             " Assume a fast terminal
 set tabstop=4           " 
 set fileformat=unix     " 
 
+set ff=unix
+set ffs=unix,dos
+
 " tabs n spaces    
 " What python likes => Makefiles do not!
 " For Makefiles :set noexpandtab and then :retab! 

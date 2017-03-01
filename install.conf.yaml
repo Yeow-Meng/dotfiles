@@ -8,4 +8,6 @@
     ~/.Xdefaults: Xdefaults
     ~/.vim: vim/
     ~/.i3: i3/
-    ~/linux: linux/
+    ~/.inputrc: inputrc
+- shell:
+  - [mkdir -p $HOME/.vim/tmp

@@ -39,9 +39,14 @@
 ! ! ! ! ! ! ! ! !
 ! Font
 ! ! ! ! ! ! ! ! !
-xterm*faceName: Terminus:size=24:antialias=false
+xterm*faceName: Terminus:size=18:antialias=false
 
 ! ! ! ! ! ! ! ! !
 ! Copy Paste
 ! ! ! ! ! ! ! ! !
 xterm*selectToClipboard: true
+
+! ! ! ! ! ! ! ! !
+! ALT shortcuts via emacs style
+! ! ! ! ! ! ! ! !
+xterm*eightBitInput: false

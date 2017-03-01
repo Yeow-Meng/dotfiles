@@ -37,7 +37,7 @@ Return a list of installed packages or nil for every skipped package."
 
 ;;
 ; Style
-(load-theme 'wombat)
+;(load-theme 'wombat)
 
 (setq initial-scratch-message "")
 (setq inhibit-startup-message t)
@@ -188,4 +188,13 @@ Return a list of installed packages or nil for every skipped package."
 
 (setq ispell-program-name "~/w/brew//Cellar/aspell/0.60.6.1/bin/aspell")
 
-(setq ediff-window-setup-function 'ediff-setup-windows-plain)    
+(setq ediff-window-setup-function 'ediff-setup-windows-plain)
+
+
+
+(add-hook 'python-mode-hook
+      (lambda ()
+        (setq indent-tabs-mode nil)
+        (setq tab-width 4)
+        (setq python-indent 4)))
+

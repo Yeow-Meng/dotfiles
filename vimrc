@@ -7,11 +7,15 @@ syntax on               " syntax highlighting
 filetype plugin indent on      " activates indenting for files
 set autoindent          " auto indenting
 set number              " line numbers
+set relativenumber      " Relative numbers
 set nobackup            " get rid of ~file
 set paste		         " why not?
 set ttyfast             " Assume a fast terminal
-set tabstop=3           " 
+set tabstop=4           " 
 set fileformat=unix     " 
+
+set ff=unix
+set ffs=unix,dos
 
 " tabs n spaces    
 " What python likes => Makefiles do not!

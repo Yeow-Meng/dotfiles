@@ -3,3 +3,9 @@
 	name = YeowMeng
 [core]
 	editor = vim
+	autocrlf = input
+[color "diff"]
+  meta = yellow bold
+  frag = white bold
+  old = red bold
+  new = cyan bold

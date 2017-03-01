@@ -3,8 +3,10 @@
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
 
-# Pretty Print ls
-alias ls='ls --color=auto'
+
+
+# Safe mv
+alias sm='mv -n'
 
 # [username@host cwd (name only) ]$
 PS1='[\u@\h \W]\$ '
@@ -29,3 +31,15 @@ function unmark {
 function marks {
     ls -l "$MARKPATH" | sed 's/  / /g' | cut -d' ' -f9- | sed 's/ -/\t-/g' && echo
 }
+
+
+# OS Specific - this is sort of a pain but that is what you get for using proprietary software ;(
+host_name="$(uname)"
+if [[ "$host_name" =~ .*Darwin.* ]]; then
+   export PATH="$PATH:$HOME/w/brew/bin"
+   export PATH="$PATH:$HOME/pack/war/bin"
+   alias ls='ls -G'
+else
+   alias ls='ls --color=auto'
+fi
+   

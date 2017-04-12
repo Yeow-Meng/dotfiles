@@ -9,3 +9,5 @@
   frag = white bold
   old = red bold
   new = cyan bold
+[credential]
+	helper = cache --timeout=6400
